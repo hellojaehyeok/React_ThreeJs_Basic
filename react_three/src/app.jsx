@@ -2,35 +2,16 @@
 
 import {OrbitControls} from 'drei/OrbitControls';
 import {softShadows} from 'drei/softShadows';
-import {MeshWobbleMaterial} from 'drei/MeshWobbleMaterial';
-import React, { useRef, useState } from 'react';
-import { Canvas, useFrame } from "react-three-fiber";
-import { useSpring, a} from 'react-spring/three';
+import React from 'react';
+import { Canvas } from "react-three-fiber";
+import Box from './components/box/box';
+import Ground from './components/ground/ground';
  
 softShadows();
 
-const Box = ({position, args, color, speed, factor}) => {
-  const boxRef = useRef();
-  useFrame(() => (boxRef.current.rotation.x = boxRef.current.rotation.y += 0.01) );
-
-  const [clickBox, setClickBox] = useState(false);
-
-  const onClickBox = useSpring({scale : clickBox?[1.4, 1.4, 1.4]:[1, 1, 1] })
-
-  return(
-    <a.mesh
-      castShadow
-      onClick={() => setClickBox(!clickBox)}
-      position={position}
-      scale={onClickBox.scale}
-      ref={boxRef}>
-      <boxBufferGeometry attach='geometry' args={args}/>
-      <MeshWobbleMaterial attach='material' color={color} speed={speed} factor={factor} />
-    </a.mesh>
-  );
-}
-
 function App() {
+
+  
 
   return (
     <>
@@ -52,10 +33,7 @@ function App() {
         <pointLight position={[-10, 0, 20]} intensity={1} />
 
         <group>
-          <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]} position={[0, -2, 0]}>
-            <planeBufferGeometry attach='geometry' args={[20, 20]}/>
-            <shadowMaterial attach='material' color='#fff'/>
-          </mesh>
+          <Ground />
           <Box position={[0, 0, 0]} args={[1, 2, 2]} color={'lightblue'} speed={0.6} factor={1}/>
           <Box position={[3, 0 , 0]} args={[1, 1, 1]} color={'pink'} speed={0.3} factor={1}/>
           <Box position={[-3, 0, 0]} args={[1, 1, 1]} color={'pink'} speed={0.3} factor={1}/>

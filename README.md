@@ -34,7 +34,7 @@ Canvas 안에는 light와 mesh Controls 등 나타낼 요소들을 넣습니다.
 
 
 ### 3D Object
-1. 3D 오브젝트를 만들기 위해서는 <mesh><mesh />안에 geometry와 material를 생성하여야 합니다.       
+1. 3D 오브젝트를 만들기 위해서는 < mesh >< mesh />안에 geometry와 material를 생성하여야 합니다.       
 2. rotation, position, scale 등은 mesh에서 조절합니다.       
 3. geometry의 args를 size를 의미합니다.       
 4. useFrame을 이용하여 동적인 움직임을 추가합니다. (useRef를 이용하여 움직이고자 하는 오브젝트를 가져옵니다.)       
@@ -107,3 +107,5 @@ Canvas 안에는 light와 mesh Controls 등 나타낼 요소들을 넣습니다.
 <hr />
 
 
+송재혁입니다.
+감사합니다.
