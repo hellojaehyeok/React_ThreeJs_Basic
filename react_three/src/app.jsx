@@ -1,9 +1,12 @@
 // import styles from './app.module.css';
 
+import {OrbitControls} from 'drei/OrbitControls';
+import {softShadows} from 'drei/softShadows';
 import React, { useRef, useState } from 'react';
 import { Canvas, useFrame } from "react-three-fiber";
 import { useSpring, a} from 'react-spring/three';
  
+softShadows();
 
 const Box = ({position, args, color}) => {
   const boxRef = useRef();
@@ -56,7 +59,7 @@ function App() {
           <Box position={[3, 0 , 0]} args={[1, 1, 1]} color={'pink'}/>
           <Box position={[-3, 0, 0]} args={[1, 1, 1]} color={'pink'}/>
         </group>
-
+        <OrbitControls />
       </Canvas>
     </>
   );
