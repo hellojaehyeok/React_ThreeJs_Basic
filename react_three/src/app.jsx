@@ -34,9 +34,9 @@ function App() {
 
         <group>
           <Ground />
-          <Box position={[0, 0, 0]} args={[1, 2, 2]} color={'lightblue'} speed={0.6} factor={1}/>
-          <Box position={[3, 0 , 0]} args={[1, 1, 1]} color={'pink'} speed={0.3} factor={1}/>
-          <Box position={[-3, 0, 0]} args={[1, 1, 1]} color={'pink'} speed={0.3} factor={1}/>
+          <Box position={[0, 0, 0]} args={[1, 2, 2]} color={'#add8e6'} clickColor={'#73c4df'} speed={0.6} factor={1}/>
+          <Box position={[3, 0 , 0]} args={[1, 1, 1]} color={'#ffc0cb'} clickColor={'#f99fae'} speed={0.3} factor={1}/>
+          <Box position={[-3, 0, 0]} args={[1, 1, 1]} color={'#ffc0cb'} clickColor={'#f99fae'} speed={0.3} factor={1}/>
         </group>
         <OrbitControls />
       </Canvas>

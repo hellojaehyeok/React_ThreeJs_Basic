@@ -3,7 +3,7 @@ import React, { useRef, useState } from 'react';
 import { useFrame } from "react-three-fiber";
 import { useSpring, a} from 'react-spring/three';
 
-const Box = ({position, args, color, speed, factor}) => {
+const Box = ({position, args, color, clickColor,speed, factor}) => {
     
     
     const boxRef = useRef();
@@ -23,7 +23,7 @@ const Box = ({position, args, color, speed, factor}) => {
         scale={onClickBox.scale}
         ref={boxRef}>
         <boxBufferGeometry attach='geometry' args={args}/>
-        <MeshWobbleMaterial attach='material' color={color} speed={speed} factor={factor} />
+        <MeshWobbleMaterial attach='material' color={clickBox?clickColor:color} speed={speed} factor={factor} />
       </a.mesh>
     );
 
